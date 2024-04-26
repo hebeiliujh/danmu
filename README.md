@@ -6,19 +6,30 @@ npm i @beige/danmu
 
 ### 使用
 
+> 引入
+
+```
+  import '@beige/danmu/dist/danmu-min.css';
+  import Danmu from '@beige/danmu/dist/danmu-min.js';
+```
+
 > 生成实例
 
 ```
   const danmuIns = Danmu.createLibrary({
     el: '#danmu-container',
-    color: '#ccc'
+    color: '#ccc',
+    channelCount: 2,
+    time: 8000
   })
 ```
 
-| 参数  |      说明      |        示例        |
-| :---: | :------------: | :----------------: |
-|  el   | 插入页面的元素 | '#danmu-container' |
-| color |  默认文字颜色  |       '#999'       |
+|     参数     |           说明           |        示例        |
+| :----------: | :----------------------: | :----------------: |
+|      el      |      插入页面的元素      | '#danmu-container' |
+|    color     |       默认文字颜色       |       '#999'       |
+| channelCount |        弹幕的行数        |         2          |
+|     time     | 一条弹幕通过的时间（ms） |        8000        |
 
 > 发送 【单条数据】
 

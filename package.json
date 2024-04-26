@@ -1,5 +1,6 @@
 {
-  "name": "danmu",
+  "name": "@beige/danmu",
+  "pkg_name": "danmu",
   "main": "dist/danmu.min.js",
   "files": [
     "dist/"
@@ -9,9 +10,9 @@
   "author": "BeiGe",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/example-project.git"
+    "url": "git+https://github.com/hebeiliujh/danmu.git"
   },
-  "homepage": "https://github.com/username/example-project#readme",
+  "homepage": "https://github.com/hebeiliujh/danmu#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development rollup -c scripts/dev.mjs -w",
     "build": "cross-env NODE_ENV=production rollup -c scripts/build.mjs"

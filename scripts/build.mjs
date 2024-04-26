@@ -20,16 +20,16 @@ const config = defaultConfig([
   uglify(),
   scss({
     processor: () => postcss([autoprefixer(), cssnano()].filter(Boolean)),
-    fileName: `${pkg.name}-min.css`,
-    // fileName: `${pkg.name}-min.${timeStamp}.css`,
+    fileName: `${pkg.pkg_name}-min.css`,
+    // fileName: `${pkg.pkg_name}-min.${timeStamp}.css`,
     sourceMap: false
   }),
   // template({
   //   template: resolve(__dirname, '../src/index.html'),
   //   target: resolve(__dirname, '../dist/index.html'),
   //   replaceVars: {
-  //     __CSS_URL: `${pkg.name}-min.css`,
-  //     // __CSS_URL: `${pkg.name}-min.${timeStamp}.css`,
+  //     __CSS_URL: `${pkg.pkg_name}-min.css`,
+  //     // __CSS_URL: `${pkg.pkg_name}-min.${timeStamp}.css`,
   //     __BUILD_VERSION: `弹幕SDK--${pkg.version}--${timeStamp}`
   //   }
   // }),
@@ -58,8 +58,8 @@ const config = defaultConfig([
 
 config.output = [
   {
-    file: resolve(__dirname, `../dist/${pkg.name}-min.js`),
-    // file: resolve(__dirname, `../dist/${pkg.name}-min.${timeStamp}.js`),
+    file: resolve(__dirname, `../dist/${pkg.pkg_name}-min.js`),
+    // file: resolve(__dirname, `../dist/${pkg.pkg_name}-min.${timeStamp}.js`),
     format: 'umd',
     name: 'Danmu',
     sourcemap: false

@@ -24,7 +24,7 @@ export default defaultConfig([
   }),
   scss({
     processor: () => postcss([autoprefixer()]),
-    fileName: `${pkg.name}-min.css`, // resolve(__dirname, `../example/${pkg.name}-min.css`),
+    fileName: `${pkg.pkg_name}-min.css`, // resolve(__dirname, `../example/${pkg.pkg_name}-min.css`),
     sourceMap: false
   }),
   copy({
