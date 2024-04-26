@@ -14,7 +14,7 @@ import pkg from '../package.json' assert { type: 'json' }
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-const timeStamp = Date.now()
+// const timeStamp = Date.now()
 
 const config = defaultConfig([
   uglify(),
@@ -24,15 +24,15 @@ const config = defaultConfig([
     // fileName: `${pkg.name}-min.${timeStamp}.css`,
     sourceMap: false
   }),
-  template({
-    template: resolve(__dirname, '../src/index.html'),
-    target: resolve(__dirname, '../dist/index.html'),
-    replaceVars: {
-      __CSS_URL: `${pkg.name}-min.css`,
-      // __CSS_URL: `${pkg.name}-min.${timeStamp}.css`,
-      __BUILD_VERSION: `弹幕SDK--${pkg.version}--${timeStamp}`
-    }
-  }),
+  // template({
+  //   template: resolve(__dirname, '../src/index.html'),
+  //   target: resolve(__dirname, '../dist/index.html'),
+  //   replaceVars: {
+  //     __CSS_URL: `${pkg.name}-min.css`,
+  //     // __CSS_URL: `${pkg.name}-min.${timeStamp}.css`,
+  //     __BUILD_VERSION: `弹幕SDK--${pkg.version}--${timeStamp}`
+  //   }
+  // }),
   copy({
     targets: [
       {
