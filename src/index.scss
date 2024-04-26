@@ -1,0 +1,29 @@
+:root {
+  --danmu__bubble-width: 300px;
+  --danmu__bubble-color: #ccc;
+}
+.danmu__wrapper {
+  > span {
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--danmu__bubble-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 10px;
+    border-radius: 12px;
+    margin-top: 2px;
+    img {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+    }
+  }
+
+  .danmu__bubble-right {
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(var(--danmu__bubble-width));
+  }
+}

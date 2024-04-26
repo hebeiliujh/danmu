@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danmu</title>
+  <link rel="stylesheet" href="/danmu-min.css">
+  <script src="/danmu-min.js"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .btns {
+      margin-top: 10px;
+    }
+
+    #danmu-container {
+      height: 64px;
+      width: 500px;
+      position: relative;
+      z-index: 999;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="danmu-container"></div>
+  <div class="btns">
+    <button id="singleBtn">发送单条</button>
+    <button id="batchBtn">批量发送</button>
+  </div>
+  <script>
+    const danmuIns = Danmu.createLibrary({
+      el: '#danmu-container',
+      color: '#ccc'
+    })
+
+    function generateText(color, icon) {
+      const text = '野火定位实例一个土耳其触发改善其实才能'
+      const len = Math.floor(Math.random() * 3) + 4
+      let sendText = ''
+      for (let index = 0; index < len; index++) {
+        const textIdx = Math.floor(Math.random() * text.length)
+        sendText += text[textIdx];
+      }
+      return {
+        text: sendText,
+        color,
+        icon
+      }
+    }
+
+    singleBtn.onclick = () => {
+      const text = generateText()
+      danmuIns.shootDanmu(text)
+    }
+    batchBtn.onclick = () => {
+      const arr = []
+      const colors = ['#124512', '#fd4512', '#aa4512']
+      const icons = [
+        'http://localhost:8080/images/icons/beishang.svg',
+        'http://localhost:8080/images/icons/gaoxing.svg',
+        'http://localhost:8080/images/icons/wuqingxu.svg',
+      ]
+      for (let index = 0; index < 7; index++) {
+        const filter = [2, 5, 6]
+        let color = undefined
+        let icon = undefined
+        if (!filter.includes(index)) {
+          color = colors[index % 3]
+          icon = icons[index % 3]
+        }
+        const text = generateText(color, icon)
+        arr.push(text)
+      }
+      danmuIns.shootDanmu(arr)
+    }
+  </script>
+</body>
+
+</html>
